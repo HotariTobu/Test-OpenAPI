@@ -1,0 +1,11 @@
+openapi: "3.0.3"
+
+info:
+  title: ""
+  version: ""
+
+paths:
+  /path1:
+    $ref: "paths/path1.yaml#/path1"
+  /path2:
+    $ref: "paths/path2.yaml#/path2"

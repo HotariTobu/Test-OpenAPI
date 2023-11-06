@@ -1,0 +1,39 @@
+path1:
+  get:
+    responses:
+      "200":
+        $ref: "#/response"
+  post:
+    requestBody:
+      $ref: "#/requestBody"
+    responses:
+      "201":
+        $ref: "#/response"
+
+S1Core:
+  type: object
+  properties:
+    p1:
+      type: string
+
+S1:
+  allOf:
+    - type: object
+      properties:
+        id:
+          type: integer
+    - $ref: "../base.yaml"
+    - $ref: "#/S1Core"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/S1Core"
+
+response:
+  content:
+    application/json:
+      schema:
+        $ref: "#/S1"

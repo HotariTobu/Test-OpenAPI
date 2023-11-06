@@ -1,4 +1,4 @@
 type: object
 properties:
-  p0:
-   type: integer
+  baseProperty:
+   type: string

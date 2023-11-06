@@ -1,0 +1,27 @@
+foo:
+  get:
+    responses:
+      "200":
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/Foo"
+  post:
+    responses:
+      "201":
+        $ref: "#/response"
+
+Foo:
+  allOf:
+    - type: object
+      properties:
+        fooId: { type: integer }
+    - $ref: "base.yaml"
+
+response:
+  content:
+    application/json:
+      schema:
+        $ref: "#/Foo"

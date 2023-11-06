@@ -5,7 +5,8 @@ info:
   version: ""
 
 paths:
-  /path1:
-    $ref: "paths/path1.yaml#/path1"
-  /path2:
-    $ref: "paths/path2.yaml#/path2"
+  /foo:
+    $ref: "foo.yaml#/foo"
+
+  /bar:
+    $ref: "bar.yaml#/bar"

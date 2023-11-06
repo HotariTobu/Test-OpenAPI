@@ -1,0 +1,27 @@
+bar:
+  get:
+    responses:
+      "200":
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/Bar"
+  post:
+    responses:
+      "201":
+        $ref: "#/response"
+
+Bar:
+  allOf:
+    - type: object
+      properties:
+        barId: { type: integer }
+    - $ref: "base.yaml"
+
+response:
+  content:
+    application/json:
+      schema:
+        $ref: "#/Bar"
